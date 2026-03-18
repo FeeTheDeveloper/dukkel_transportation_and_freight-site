@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#123A63"/>
+  <rect x="40" y="40" width="1120" height="550" rx="32" fill="url(#bg)"/>
+  <circle cx="965" cy="154" r="112" fill="#F7931E" fill-opacity="0.16"/>
+  <circle cx="212" cy="520" r="132" fill="#6FA3C8" fill-opacity="0.12"/>
+  <rect x="118" y="238" width="420" height="110" rx="24" fill="#EFF5FB"/>
+  <rect x="540" y="196" width="182" height="152" rx="30" fill="#FFFFFF"/>
+  <path d="M628 208H720L790 274V348H628V208Z" fill="#F7931E"/>
+  <rect x="702" y="234" width="58" height="52" rx="14" fill="#123A63"/>
+  <rect x="84" y="354" width="716" height="28" rx="14" fill="#123A63"/>
+  <circle cx="244" cy="416" r="40" fill="#FFFFFF"/>
+  <circle cx="244" cy="416" r="14" fill="#F7931E"/>
+  <circle cx="584" cy="416" r="40" fill="#FFFFFF"/>
+  <circle cx="584" cy="416" r="14" fill="#F7931E"/>
+  <circle cx="726" cy="416" r="40" fill="#FFFFFF"/>
+  <circle cx="726" cy="416" r="14" fill="#F7931E"/>
+  <text x="118" y="150" fill="white" font-family="Arial, sans-serif" font-size="28" letter-spacing="7">DUKEEL TRANSPORTATION</text>
+  <text x="118" y="206" fill="white" font-family="Arial, sans-serif" font-size="56" font-weight="700">Mission-Driven Freight</text>
+  <text x="118" y="266" fill="white" font-family="Arial, sans-serif" font-size="56" font-weight="700">&amp; Logistics Execution</text>
+  <defs>
+    <linearGradient id="bg" x1="40" y1="40" x2="1160" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#123A63"/>
+      <stop offset="0.56" stop-color="#1F5A8C"/>
+      <stop offset="1" stop-color="#6FA3C8"/>
+    </linearGradient>
+  </defs>
+</svg>
+
