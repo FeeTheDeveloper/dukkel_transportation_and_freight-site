@@ -16,6 +16,33 @@ npm install
 npm run dev
 ```
 
+## Deploy to Vercel
+
+1. Push the repository to GitHub.
+2. Import the repo into Vercel.
+3. Vercel should detect `Next.js` automatically.
+4. Use the default project settings:
+   - Build command: `next build`
+   - Output directory: `.next`
+   - Install command: `npm install`
+5. Deploy the project.
+
+This project does not currently require any environment variables for deployment.
+
+### Recommended Vercel setup
+
+- Framework preset: `Next.js`
+- Node version: use Vercel default or a current LTS release
+- Production branch: `main`
+- Domain: connect your production domain after the first successful deploy
+
+### Post-deploy checks
+
+- Confirm the homepage, services, government contracting, about, and contact pages all load correctly
+- Confirm `robots.txt` and `sitemap.xml` are available
+- Confirm contact links open the correct email address and phone number
+- Confirm the hero truck asset renders correctly in production
+
 ## Quality checks
 
 ```bash
