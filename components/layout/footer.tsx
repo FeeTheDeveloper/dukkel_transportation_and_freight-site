@@ -13,6 +13,7 @@ export function Footer() {
             <div className="inline-flex rounded-[24px] bg-white px-5 py-4 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
               <DukeelLogoFull className="h-12 w-auto sm:h-14" />
             </div>
+            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-lightBlue">Veteran-owned</p>
             <p className="mt-4 text-white/70">
               Veteran-owned and Texas-based, Dukeel provides dependable freight and logistics support for commercial and
               government transportation requirements.
@@ -33,9 +34,17 @@ export function Footer() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/60">Contact</p>
             <div className="mt-4 space-y-3 text-white/75">
-              <p>{siteConfig.phone}</p>
-              <p>{siteConfig.email}</p>
-              <p>{siteConfig.address}</p>
+              <p className="font-semibold text-white">{siteConfig.legalName}</p>
+              <a className="block transition hover:text-white" href={`tel:${siteConfig.phone.replace(/[^\d]/g, "")}`}>
+                {siteConfig.phone}
+              </a>
+              <a className="block transition hover:text-white" href={`mailto:${siteConfig.email}`}>
+                {siteConfig.email}
+              </a>
+              <div className="text-white/75">
+                <p>{siteConfig.addressLine1}</p>
+                <p>{siteConfig.addressLine2}</p>
+              </div>
             </div>
           </div>
         </div>

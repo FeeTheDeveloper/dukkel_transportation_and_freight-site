@@ -87,8 +87,8 @@ export function HeroTruck() {
 
       <div className="relative z-10 rounded-[34px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm sm:p-6">
         <motion.img
-          src="/truck.png"
-          alt="moving truck"
+          src="/truck.svg"
+          alt="branded semi truck in motion"
           animate={{ x: [0, 20, 0] }}
           transition={{
             repeat: Number.POSITIVE_INFINITY,

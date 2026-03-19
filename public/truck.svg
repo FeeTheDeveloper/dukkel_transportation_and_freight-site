@@ -1,0 +1,103 @@
+<svg width="1400" height="820" viewBox="0 0 1400 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="truck-body" x1="319" y1="247" x2="1035" y2="615" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E4F7E"/>
+      <stop offset="0.48" stop-color="#123A63"/>
+      <stop offset="1" stop-color="#0D2B49"/>
+    </linearGradient>
+    <linearGradient id="truck-panel" x1="634" y1="172" x2="1167" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FBFF"/>
+      <stop offset="1" stop-color="#C8DEEC"/>
+    </linearGradient>
+    <linearGradient id="truck-accent" x1="760" y1="282" x2="1043" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFAE3B"/>
+      <stop offset="1" stop-color="#F7931E"/>
+    </linearGradient>
+    <linearGradient id="windshield" x1="964" y1="227" x2="1127" y2="365" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BEE9FF"/>
+      <stop offset="1" stop-color="#4A88B8"/>
+    </linearGradient>
+    <linearGradient id="road-glow" x1="258" y1="627" x2="1168" y2="627" gradientUnits="userSpaceOnUse">
+      <stop stop-color="rgba(247,147,30,0)"/>
+      <stop offset="0.28" stop-color="#F7931E"/>
+      <stop offset="0.72" stop-color="#6FA3C8"/>
+      <stop offset="1" stop-color="rgba(111,163,200,0)"/>
+    </linearGradient>
+    <filter id="blur-strong" x="0" y="0" width="1400" height="820" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="shadow" x="232" y="126" width="1016" height="594" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#0E243B" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <g opacity="0.55">
+    <path d="M78 274H292" stroke="#A9D8F4" stroke-width="10" stroke-linecap="round"/>
+    <path d="M22 339H236" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M92 404H248" stroke="#F7931E" stroke-width="10" stroke-linecap="round"/>
+    <path d="M1114 199H1330" stroke="#A9D8F4" stroke-width="10" stroke-linecap="round"/>
+    <path d="M1160 263H1378" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M1098 327H1286" stroke="#F7931E" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.22" filter="url(#blur-strong)">
+    <ellipse cx="804" cy="592" rx="322" ry="52" fill="#F7931E"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M352 588H1048C1079.19 588 1104.74 563.16 1106.27 531.99L1117 313.26C1117.87 295.55 1110.17 278.56 1096.31 267.51L1010.6 199.2C998.17 189.29 982.76 183.87 966.86 183.87H666.72C652.09 183.87 637.85 188.59 625.96 197.32L557.67 247.44C547.11 255.19 539.28 266.07 535.3 278.52L459.44 515.68C449.82 545.73 472.27 576.87 503.82 576.87H594.67L615.4 588H352Z" fill="url(#truck-body)"/>
+    <path d="M644 217H941.71C958.04 217 973.91 222.33 986.92 232.19L1057.59 285.72C1068.26 293.8 1074.17 306.71 1073.32 320.07L1064.69 456.58C1063.6 473.77 1049.33 487.16 1032.11 487.16H644V217Z" fill="url(#truck-panel)"/>
+    <path d="M589.25 252.98L644 217V487.16H515.15L572.3 299.48C575.84 287.84 581.71 277.04 589.25 268.03V252.98Z" fill="#18456E"/>
+    <path d="M776 246H925.68C938.73 246 951.34 250.86 961.03 259.63L1016.79 310.08C1026.51 318.87 1031.73 331.57 1031.01 344.65L1027.58 406.57C1027.18 413.78 1021.21 419.43 1014 419.43H776V246Z" fill="url(#truck-accent)"/>
+    <path d="M820 265H924.29C934.56 265 944.49 268.77 952.17 275.59L989.67 308.88C997.66 315.97 1002.21 326.14 1002.21 336.82V356.44C1002.21 364.29 995.84 370.66 987.99 370.66H820V265Z" fill="url(#windshield)"/>
+    <path d="M676 271H743" stroke="#F7931E" stroke-width="18" stroke-linecap="round"/>
+    <path d="M674 324H860" stroke="#FFFFFF" stroke-opacity="0.58" stroke-width="10" stroke-linecap="round"/>
+    <path d="M674 355H833" stroke="#FFFFFF" stroke-opacity="0.42" stroke-width="8" stroke-linecap="round"/>
+    <path d="M521 487.16H1072L1062.88 526.61C1057.56 549.62 1037.07 565.92 1013.46 565.92H493.13C474.79 565.92 461.71 548.08 467.45 530.66L481.91 487.16H521Z" fill="#0F2D49"/>
+    <path d="M702 482H942" stroke="#F7931E" stroke-width="16" stroke-linecap="round"/>
+    <path d="M1048 588H1131.25C1152.35 588 1171.62 576.06 1180.97 557.16L1205.95 506.69C1211.57 495.34 1214.49 482.85 1214.49 470.18V437.96C1214.49 420.33 1200.2 406.03 1182.56 406.03H1080L1048 588Z" fill="#123A63"/>
+    <path d="M1082.93 435.9H1182.44C1186.72 435.9 1190.19 439.37 1190.19 443.65V462.58C1190.19 470.3 1183.93 476.56 1176.21 476.56H1076.88L1082.93 435.9Z" fill="#F2F8FC"/>
+    <path d="M1105 514H1210" stroke="#F7931E" stroke-width="14" stroke-linecap="round"/>
+    <path d="M588 603H1034" stroke="#0D2236" stroke-width="20" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.78">
+    <path d="M270 612H1156" stroke="url(#road-glow)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M410 649H1026" stroke="#FFFFFF" stroke-opacity="0.24" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <circle cx="640" cy="590" r="73" fill="#0E243B"/>
+    <circle cx="640" cy="590" r="51" fill="#FFFFFF"/>
+    <circle cx="640" cy="590" r="19" fill="#F7931E"/>
+    <path d="M640 531V649" stroke="#6FA3C8" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+    <path d="M581 590H699" stroke="#6FA3C8" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+    <path d="M598 548L682 632" stroke="#6FA3C8" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+    <path d="M682 548L598 632" stroke="#6FA3C8" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="948" cy="590" r="73" fill="#0E243B"/>
+    <circle cx="948" cy="590" r="51" fill="#FFFFFF"/>
+    <circle cx="948" cy="590" r="19" fill="#F7931E"/>
+    <path d="M948 531V649" stroke="#6FA3C8" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+    <path d="M889 590H1007" stroke="#6FA3C8" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+    <path d="M906 548L990 632" stroke="#6FA3C8" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+    <path d="M990 548L906 632" stroke="#6FA3C8" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="1130" cy="588" r="58" fill="#0E243B"/>
+    <circle cx="1130" cy="588" r="40" fill="#FFFFFF"/>
+    <circle cx="1130" cy="588" r="15" fill="#F7931E"/>
+    <path d="M1130 543V633" stroke="#6FA3C8" stroke-opacity="0.52" stroke-width="6" stroke-linecap="round"/>
+    <path d="M1085 588H1175" stroke="#6FA3C8" stroke-opacity="0.52" stroke-width="6" stroke-linecap="round"/>
+    <path d="M1098 556L1162 620" stroke="#6FA3C8" stroke-opacity="0.52" stroke-width="6" stroke-linecap="round"/>
+    <path d="M1162 556L1098 620" stroke="#6FA3C8" stroke-opacity="0.52" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.38">
+    <path d="M1028 122 1111 93" stroke="#A9D8F4" stroke-width="6" stroke-linecap="round"/>
+    <path d="M1044 151 1147 114" stroke="#A9D8F4" stroke-width="4" stroke-linecap="round"/>
+    <path d="M1074 177 1188 138" stroke="#F7931E" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>
+

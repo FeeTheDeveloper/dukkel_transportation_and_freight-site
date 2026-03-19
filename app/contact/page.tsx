@@ -16,8 +16,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Ready to move freight with confidence and precision?"
-        description="Share the shipment profile, contract environment, or execution timeline. Dukeel Transportation is structured to respond with clarity and urgency."
+        title="Ready for Immediate Engagement"
+        description="Connect with Dukeel for freight support, logistics partnerships, and government contracting opportunities. We are positioned to respond quickly and move into execution with clarity."
       />
 
       <MotionSection className="py-20 sm:py-24">
@@ -25,7 +25,11 @@ export default function ContactPage() {
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
             <article className="surface-panel p-8 sm:p-10">
               <span className="eyebrow">Direct contact</span>
-              <h2 className="mt-5 text-3xl font-semibold">Start the conversation</h2>
+              <h2 className="mt-5 text-3xl font-semibold">Ready for Immediate Engagement</h2>
+              <p className="mt-4 max-w-xl">
+                Reach out for commercial freight support, logistics partnership discussions, or government contracting
+                opportunities. Dukeel is built to engage quickly and coordinate the next step without delay.
+              </p>
               <div className="mt-8 space-y-5">
                 <a
                   className="flex items-center gap-4 rounded-[24px] bg-surface px-5 py-5 transition hover:-translate-y-1"
@@ -52,22 +56,35 @@ export default function ContactPage() {
                     <p className="mt-1 font-semibold text-navy">{siteConfig.email}</p>
                   </div>
                 </a>
+
+                <div className="flex items-center gap-4 rounded-[24px] bg-surface px-5 py-5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-deepBlue text-white">
+                    <span className="text-lg font-semibold">TX</span>
+                  </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.2em] text-deepBlue/70">Address</p>
+                    <p className="mt-1 font-semibold text-navy">{siteConfig.addressLine1}</p>
+                    <p className="text-sm text-ink/70">{siteConfig.addressLine2}</p>
+                  </div>
+                </div>
               </div>
 
-              <p className="mt-8 text-sm text-ink/70">{siteConfig.address}</p>
+              <a className="button-primary mt-8" href={`mailto:${siteConfig.email}`}>
+                Contact Dukeel
+              </a>
             </article>
 
             <article className="surface-panel p-8 sm:p-10">
-              <span className="eyebrow">Request outline</span>
-              <h2 className="mt-5 text-3xl font-semibold">Information to include</h2>
+              <span className="eyebrow">Engagement details</span>
+              <h2 className="mt-5 text-3xl font-semibold">What to include in your request</h2>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {[
                   "Pickup and delivery geography",
-                  "Requested timeline or urgency level",
+                  "Required timeline or urgency level",
                   "Freight type and handling notes",
                   "Contract or agency context if applicable",
                   "Expected cadence: one-time, surge, or recurring",
-                  "Primary point of contact and decision window"
+                  "Primary point of contact and procurement timeline"
                 ].map((item) => (
                   <div key={item} className="rounded-[22px] bg-surface px-5 py-5 text-sm text-ink/80">
                     {item}
@@ -78,7 +95,8 @@ export default function ContactPage() {
               <div className="mt-8 rounded-[24px] bg-navy px-6 py-6 text-white">
                 <p className="text-sm uppercase tracking-[0.22em] text-white/60">Fastest route</p>
                 <p className="mt-3 text-lg text-white/80">
-                  For quickest response, include the phrase <span className="font-semibold text-white">Priority Freight Request</span> in the email subject line.
+                  For the quickest response, email <span className="font-semibold text-white">{siteConfig.email}</span>{" "}
+                  with the service scope, operating context, and requested timeline.
                 </p>
               </div>
             </article>

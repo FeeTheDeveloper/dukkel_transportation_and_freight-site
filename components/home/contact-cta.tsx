@@ -19,24 +19,17 @@ export function ContactCta() {
 
           <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <span className="eyebrow border-white/20 bg-white/10 text-white">Contact</span>
-              <h2 className="mt-5 text-3xl font-semibold text-white sm:text-4xl">
-                Ready to move from request to execution?
-              </h2>
+              <span className="eyebrow border-white/20 bg-white/10 text-white">Immediate engagement</span>
+              <h2 className="mt-5 text-3xl font-semibold text-white sm:text-4xl">Built for Precision. Ready for Execution.</h2>
               <p className="mt-4 max-w-xl text-white/75">
-                Share the freight requirement, contract context, or timeline. Dukeel is prepared to engage immediately
-                and coordinate the next step with clarity.
+                Dukeel is positioned for dependable freight execution, responsive logistics support, and contract-ready
+                engagement when speed, reliability, and operational clarity matter.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Link className="button-primary" href="/contact">
-                Contact Dukeel
-              </Link>
-              <Link className="button-secondary" href="/services">
-                Review capabilities
-              </Link>
-            </div>
+            <Link className="button-primary" href="/contact">
+              Request Services
+            </Link>
           </div>
         </motion.div>
       </Container>
