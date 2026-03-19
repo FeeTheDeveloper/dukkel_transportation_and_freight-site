@@ -1,5 +1,7 @@
 # Dukeel Transportation
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/FeeTheDeveloper/dukkel_transportation_and_freight-site)
+
 A modern logistics website built with Next.js App Router, Tailwind CSS, and Framer Motion.
 
 ## Stack
@@ -28,6 +30,7 @@ npm run dev
 5. Deploy the project.
 
 This project does not currently require any environment variables for deployment.
+The repo also includes a minimal [vercel.json](c:/Users/uveav/OneDrive/Documents/GitHub/dukkel_transportation_and_freight-site/vercel.json) with production-friendly security headers.
 
 ### Recommended Vercel setup
 
@@ -72,6 +75,7 @@ lib/
   site.ts
 public/
   site-preview.svg
+  truck.svg
 ```
 
 ## Notes
