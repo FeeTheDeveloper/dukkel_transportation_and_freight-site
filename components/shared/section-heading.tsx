@@ -17,9 +17,7 @@ export function SectionHeading({
 
   return (
     <div className={isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      {eyebrow ? (
-        <span className={`eyebrow ${invert ? "border-white/20 bg-white/10 text-white" : ""}`.trim()}>{eyebrow}</span>
-      ) : null}
+      {eyebrow ? <p className={`eyebrow ${invert ? "eyebrow-invert" : ""}`.trim()}>{eyebrow}</p> : null}
       <h2 className={`section-title mt-5 ${invert ? "text-white" : ""}`.trim()}>{title}</h2>
       <p className={`section-copy mt-4 ${invert ? "text-white/75" : ""} ${isCentered ? "mx-auto" : ""}`.trim()}>
         {description}

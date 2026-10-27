@@ -10,33 +10,28 @@
   --white: #ffffff;
   --surface: #eff5fb;
   --ink: #0e243b;
+  --night: #060f1c;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--night);
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
   color: var(--ink);
-  background:
-    radial-gradient(circle at top left, rgba(111, 163, 200, 0.28), transparent 28%),
-    radial-gradient(circle at top right, rgba(247, 147, 30, 0.14), transparent 24%),
-    linear-gradient(180deg, #f7fbff 0%, #eef5fb 45%, #ffffff 100%);
+  background: #ffffff;
   min-height: 100vh;
 }
 
 body::selection {
-  background: rgba(247, 147, 30, 0.24);
+  background: rgba(247, 147, 30, 0.32);
 }
 
 @layer base {
@@ -52,6 +47,10 @@ body::selection {
   p {
     @apply leading-7 text-ink/80;
   }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
 }
 
 @layer components {
@@ -59,12 +58,21 @@ body::selection {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
-  .surface-panel {
-    @apply rounded-[28px] border border-white/60 bg-panel-gradient shadow-panel backdrop-blur;
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-deepBlue;
   }
 
-  .eyebrow {
-    @apply inline-flex items-center rounded-full border border-lightBlue/30 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-deepBlue;
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-accent;
+  }
+
+  .eyebrow-invert {
+    @apply text-steel;
+  }
+
+  .display-title {
+    @apply font-condensed text-5xl font-semibold uppercase leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl;
   }
 
   .section-title {
@@ -76,25 +84,18 @@ body::selection {
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#dc7f14] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-night transition duration-300 hover:bg-[#ffa63d];
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-navy;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition duration-300 hover:border-white hover:bg-white/10;
   }
 
   .button-ghost {
-    @apply inline-flex items-center justify-center rounded-full border border-navy/10 bg-white px-6 py-3 text-sm font-semibold text-navy transition duration-300 hover:-translate-y-0.5 hover:border-deepBlue/30 hover:text-deepBlue;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-navy/20 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-navy transition duration-300 hover:border-navy hover:bg-surface;
   }
 
-  .grid-overlay {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 48px 48px;
-  }
-
-  .wheel {
-    animation: spin 1s linear infinite;
+  .media-caption {
+    @apply text-[11px] font-medium uppercase tracking-[0.2em] text-white/55;
   }
 }

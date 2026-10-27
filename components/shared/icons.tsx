@@ -11,44 +11,9 @@ export function ArrowUpRightIcon(props: IconProps) {
   );
 }
 
-export function ShieldIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" {...props}>
-      <path d="M12 3 5 6v6c0 4.2 2.6 8 7 9 4.4-1 7-4.8 7-9V6l-7-3Z" />
-      <path d="m9.5 12 1.8 1.8 3.7-4" />
-    </svg>
-  );
-}
 
-export function TruckIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" {...props}>
-      <path d="M3 7h11v9H3z" />
-      <path d="M14 10h3.5L21 13v3h-7z" />
-      <circle cx="8" cy="18" r="2" />
-      <circle cx="18" cy="18" r="2" />
-    </svg>
-  );
-}
 
-export function CompassIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" {...props}>
-      <circle cx="12" cy="12" r="9" />
-      <path d="m15.5 8.5-2.6 5.1-5.1 2.6 2.6-5.1 5.1-2.6Z" />
-    </svg>
-  );
-}
 
-export function LayersIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" {...props}>
-      <path d="m12 4 8 4-8 4-8-4 8-4Z" />
-      <path d="m4 12 8 4 8-4" />
-      <path d="m4 16 8 4 8-4" />
-    </svg>
-  );
-}
 
 export function PhoneIcon(props: IconProps) {
   return (
@@ -67,10 +32,3 @@ export function MailIcon(props: IconProps) {
   );
 }
 
-export function BoltIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" {...props}>
-      <path d="M13 2 5 13h5l-1 9 8-11h-5l1-9Z" />
-    </svg>
-  );
-}

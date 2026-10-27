@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Dukeel Transportation",
   legalName: "Dukeel Transportation & Freight Corporation",
   shortName: "Dukeel",
-  url: "https://www.dukeeltransportation.com",
+  url: "https://dukeeltransport.com",
   description:
     "Veteran-owned, Texas-based freight and logistics support for commercial transportation and government contract execution.",
   phone: "469-708-5407",
@@ -19,3 +19,9 @@ export const navItems = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" }
 ] as const;
+
+export const telHref = `tel:${siteConfig.phone.replace(/[^\d]/g, "")}`;
+
+export function mailtoHref(subject: string, body: string) {
+  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}

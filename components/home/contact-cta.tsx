@@ -1,38 +1,45 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
-import { MotionSection } from "@/components/shared/motion-section";
 import { Container } from "@/components/shared/container";
+import { siteConfig, telHref } from "@/lib/site";
 
 export function ContactCta() {
   return (
-    <MotionSection className="pb-20 pt-4 sm:pb-24">
-      <Container>
-        <motion.div
-          whileHover={{ y: -4 }}
-          className="relative overflow-hidden rounded-[32px] bg-navy px-6 py-10 text-white shadow-panel sm:px-10 lg:px-14 lg:py-14"
-        >
-          <div className="absolute right-0 top-0 h-44 w-44 rounded-full bg-accent/25 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-lightBlue/20 blur-3xl" />
+    <section className="relative isolate overflow-hidden bg-night text-white">
+      <Image
+        alt=""
+        className="-z-10 object-cover opacity-40"
+        fill
+        sizes="100vw"
+        src="/media/dukeel/freight-road"
+      />
+      <div className="absolute inset-0 -z-10 bg-scrim-left" />
 
-          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <span className="eyebrow border-white/20 bg-white/10 text-white">Immediate engagement</span>
-              <h2 className="mt-5 text-3xl font-semibold text-white sm:text-4xl">Built for Precision. Ready for Execution.</h2>
-              <p className="mt-4 max-w-xl text-white/75">
-                Dukeel is positioned for dependable freight execution, responsive logistics support, and contract-ready
-                engagement when speed, reliability, and operational clarity matter.
-              </p>
-            </div>
-
-            <Link className="button-primary" href="/contact">
-              Request Services
+      <Container className="py-20 sm:py-28">
+        <div className="max-w-2xl">
+          <p className="eyebrow eyebrow-invert">Start a request</p>
+          <h2 className="display-title mt-5 text-white">Built for precision. Ready to move.</h2>
+          <p className="mt-6 text-lg text-white/80">
+            Tell us what needs to move, where, and when. Commercial shippers and procurement teams each have a direct route
+            in.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Link className="button-primary" href="/contact#freight">
+              Request Freight Support
+            </Link>
+            <Link className="button-secondary" href="/contact#procurement">
+              Procurement inquiry
             </Link>
           </div>
-        </motion.div>
+          <p className="mt-8 text-white/70">
+            Or call{" "}
+            <a className="font-semibold text-white underline decoration-accent underline-offset-4" href={telHref}>
+              {siteConfig.phone}
+            </a>
+          </p>
+        </div>
       </Container>
-    </MotionSection>
+    </section>
   );
 }

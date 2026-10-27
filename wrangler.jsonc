@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dukeel-transport-site",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Production hostnames. Wrangler creates the proxied DNS records on the
+  // dukeeltransport.com zone when these are deployed.
+  "routes": [
+    { "pattern": "dukeeltransport.com", "custom_domain": true },
+    { "pattern": "www.dukeeltransport.com", "custom_domain": true }
+  ],
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": {
+    "enabled": true
+  }
+}

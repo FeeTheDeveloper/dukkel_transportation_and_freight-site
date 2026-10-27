@@ -1,108 +1,145 @@
 import type { Metadata } from "next";
 
-import { MotionSection } from "@/components/shared/motion-section";
-import { PageHero } from "@/components/shared/page-hero";
 import { MailIcon, PhoneIcon } from "@/components/shared/icons";
 import { Container } from "@/components/shared/container";
-import { siteConfig } from "@/lib/site";
+import { MotionSection } from "@/components/shared/motion-section";
+import { PageHero } from "@/components/shared/page-hero";
+import { mailtoHref, siteConfig, telHref } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Request logistics support, discuss government contracting, or connect with Dukeel Transportation."
+  description: "Request freight support or start a government procurement inquiry with Dukeel Transportation."
 };
+
+// No server-side intake is live yet: both routes open a pre-filled email in the
+// visitor's own mail app, and the page says so plainly.
+const routes = [
+  {
+    id: "freight",
+    eyebrow: "Commercial shippers",
+    title: "Freight service inquiry",
+    description: "For freight transportation, dedicated hauling, or priority loads.",
+    include: [
+      "Pickup and delivery area",
+      "Freight type, weight, and handling notes",
+      "Requested pickup date or delivery window",
+      "One-time, recurring, or dedicated",
+      "Your name, business, and best phone number"
+    ],
+    subject: "Freight service inquiry",
+    body: [
+      "Name:",
+      "Business:",
+      "Phone (optional):",
+      "Service needed (freight / dedicated hauling / priority):",
+      "Origin area:",
+      "Destination area:",
+      "Requested schedule:",
+      "Freight details:",
+      ""
+    ].join("\n")
+  },
+  {
+    id: "procurement",
+    eyebrow: "Agencies & prime contractors",
+    title: "Government / prime procurement inquiry",
+    description: "For government logistics support or contract-based transportation.",
+    include: [
+      "Agency or prime contractor",
+      "Solicitation, task order, or requirement reference if available",
+      "Lanes, volumes, and period of performance",
+      "Documentation you will need from Dukeel",
+      "Contracting point of contact and timeline"
+    ],
+    subject: "Government / prime procurement inquiry",
+    body: [
+      "Name:",
+      "Agency or prime contractor:",
+      "Phone (optional):",
+      "Requirement or solicitation reference:",
+      "Lanes / service area:",
+      "Volumes and period of performance:",
+      "Documentation needed:",
+      "Timeline:",
+      ""
+    ].join("\n")
+  }
+] as const;
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
         eyebrow="Contact"
-        title="Ready for Immediate Engagement"
-        description="Connect with Dukeel for freight support, logistics partnerships, and government contracting opportunities. We are positioned to respond quickly and move into execution with clarity."
+        title="Two direct routes in"
+        description="Choose the route that fits your request. Each one opens a pre-filled email to Dukeel so nothing important gets missed."
+        image={{ src: "/media/dukeel/priority-freight", alt: "Navy semi-truck parked beside a loading dock at dusk" }}
       />
 
-      <MotionSection className="py-20 sm:py-24">
+      <MotionSection className="bg-white py-20 sm:py-28">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-            <article className="surface-panel p-8 sm:p-10">
-              <span className="eyebrow">Direct contact</span>
-              <h2 className="mt-5 text-3xl font-semibold">Ready for Immediate Engagement</h2>
-              <p className="mt-4 max-w-xl">
-                Reach out for commercial freight support, logistics partnership discussions, or government contracting
-                opportunities. Dukeel is built to engage quickly and coordinate the next step without delay.
-              </p>
-              <div className="mt-8 space-y-5">
-                <a
-                  className="flex items-center gap-4 rounded-[24px] bg-surface px-5 py-5 transition hover:-translate-y-1"
-                  href={`tel:${siteConfig.phone.replace(/[^\d]/g, "")}`}
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-navy text-white">
-                    <PhoneIcon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-deepBlue/70">Phone</p>
-                    <p className="mt-1 font-semibold text-navy">{siteConfig.phone}</p>
-                  </div>
+          <div className="grid gap-px bg-navy/10 lg:grid-cols-2">
+            {routes.map((route) => (
+              <article key={route.id} aria-labelledby={`${route.id}-title`} className="scroll-mt-28 bg-white p-6 sm:p-10" id={route.id}>
+                <p className="eyebrow">{route.eyebrow}</p>
+                <h2 className="mt-4 text-3xl font-semibold" id={`${route.id}-title`}>
+                  {route.title}
+                </h2>
+                <p className="mt-3">{route.description}</p>
+
+                <h3 className="mt-8 text-xs font-semibold uppercase tracking-[0.24em] text-deepBlue">What to include</h3>
+                <ul className="mt-3 divide-y divide-navy/10 border-y border-navy/10">
+                  {route.include.map((item) => (
+                    <li key={item} className="flex items-center gap-3 py-3 text-ink/80">
+                      <span aria-hidden="true" className="h-1.5 w-1.5 flex-none bg-accent" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <a className="button-primary mt-8 w-full sm:w-auto" href={mailtoHref(route.subject, route.body)}>
+                  <MailIcon className="h-4 w-4" />
+                  Email {route.id === "freight" ? "a freight request" : "a procurement inquiry"}
                 </a>
-
-                <a
-                  className="flex items-center gap-4 rounded-[24px] bg-surface px-5 py-5 transition hover:-translate-y-1"
-                  href={`mailto:${siteConfig.email}`}
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-white">
-                    <MailIcon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-deepBlue/70">Email</p>
-                    <p className="mt-1 font-semibold text-navy">{siteConfig.email}</p>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-4 rounded-[24px] bg-surface px-5 py-5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-deepBlue text-white">
-                    <span className="text-lg font-semibold">TX</span>
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-deepBlue/70">Address</p>
-                    <p className="mt-1 font-semibold text-navy">{siteConfig.addressLine1}</p>
-                    <p className="text-sm text-ink/70">{siteConfig.addressLine2}</p>
-                  </div>
-                </div>
-              </div>
-
-              <a className="button-primary mt-8" href={`mailto:${siteConfig.email}`}>
-                Contact Dukeel
-              </a>
-            </article>
-
-            <article className="surface-panel p-8 sm:p-10">
-              <span className="eyebrow">Engagement details</span>
-              <h2 className="mt-5 text-3xl font-semibold">What to include in your request</h2>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                {[
-                  "Pickup and delivery geography",
-                  "Required timeline or urgency level",
-                  "Freight type and handling notes",
-                  "Contract or agency context if applicable",
-                  "Expected cadence: one-time, surge, or recurring",
-                  "Primary point of contact and procurement timeline"
-                ].map((item) => (
-                  <div key={item} className="rounded-[22px] bg-surface px-5 py-5 text-sm text-ink/80">
-                    {item}
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8 rounded-[24px] bg-navy px-6 py-6 text-white">
-                <p className="text-sm uppercase tracking-[0.22em] text-white/60">Fastest route</p>
-                <p className="mt-3 text-lg text-white/80">
-                  For the quickest response, email <span className="font-semibold text-white">{siteConfig.email}</span>{" "}
-                  with the service scope, operating context, and requested timeline.
-                </p>
-              </div>
-            </article>
+                <p className="mt-3 text-sm text-ink/60">Opens a pre-filled message in your email app, addressed to {siteConfig.email}.</p>
+              </article>
+            ))}
           </div>
         </Container>
       </MotionSection>
+
+      <section className="bg-night text-white">
+        <Container className="py-16 sm:py-20">
+          <div className="grid gap-10 md:grid-cols-3">
+            <a className="group" href={telHref}>
+              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-steel">
+                <PhoneIcon className="h-4 w-4" />
+                Phone
+              </p>
+              <p className="mt-3 font-condensed text-3xl font-semibold text-white group-hover:text-accent">{siteConfig.phone}</p>
+            </a>
+            <a className="group" href={`mailto:${siteConfig.email}`}>
+              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-steel">
+                <MailIcon className="h-4 w-4" />
+                Email
+              </p>
+              <p className="mt-3 break-all font-condensed text-3xl font-semibold text-white group-hover:text-accent">{siteConfig.email}</p>
+            </a>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-steel">Address</p>
+              <address className="mt-3 font-condensed text-3xl font-semibold not-italic text-white">
+                {siteConfig.addressLine1}
+                <br />
+                {siteConfig.addressLine2}
+              </address>
+            </div>
+          </div>
+          <p className="mt-12 max-w-2xl text-sm text-white/55">
+            Please do not email classified, controlled, or sensitive shipment details. We will arrange a secure channel when a
+            requirement calls for one.
+          </p>
+        </Container>
+      </section>
     </>
   );
 }

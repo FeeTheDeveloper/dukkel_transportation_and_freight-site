@@ -10,3 +10,9 @@ dist
 .env.test.local
 .env.production.local
 tsconfig.tsbuildinfo
+
+# Cloudflare / OpenNext
+.open-next
+.wrangler
+.dev.vars
+.dev.vars.*

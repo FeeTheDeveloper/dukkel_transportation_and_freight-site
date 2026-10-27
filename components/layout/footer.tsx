@@ -2,56 +2,58 @@ import Link from "next/link";
 
 import { DukeelLogoFull } from "@/components/brand/logo";
 import { Container } from "@/components/shared/container";
-import { navItems, siteConfig } from "@/lib/site";
+import { navItems, siteConfig, telHref } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-navy/10 bg-navy text-white">
-      <Container className="py-14">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr]">
+    <footer className="bg-night text-white">
+      <Container className="py-16">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div className="max-w-md">
-            <div className="inline-flex rounded-[24px] bg-white px-5 py-4 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
-              <DukeelLogoFull className="h-12 w-auto sm:h-14" />
-            </div>
-            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-lightBlue">Veteran-owned</p>
-            <p className="mt-4 text-white/70">
-              Veteran-owned and Texas-based, Dukeel provides dependable freight and logistics support for commercial and
-              government transportation requirements.
+            <DukeelLogoFull className="h-14 sm:h-16" />
+            <p className="mt-6 text-white/65">
+              Veteran-owned and Texas-based, Dukeel provides freight and logistics support for commercial and government
+              transportation requirements.
             </p>
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/60">Navigation</p>
-            <div className="mt-4 flex flex-col gap-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-steel">Navigation</p>
+            <ul className="mt-5 flex flex-col gap-3">
               {navItems.map((item) => (
-                <Link key={item.href} className="text-white/75 transition hover:text-white" href={item.href}>
-                  {item.label}
-                </Link>
+                <li key={item.href}>
+                  <Link className="text-white/75 transition hover:text-white" href={item.href}>
+                    {item.label}
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/60">Contact</p>
-            <div className="mt-4 space-y-3 text-white/75">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-steel">Contact</p>
+            <address className="mt-5 space-y-3 not-italic text-white/75">
               <p className="font-semibold text-white">{siteConfig.legalName}</p>
-              <a className="block transition hover:text-white" href={`tel:${siteConfig.phone.replace(/[^\d]/g, "")}`}>
+              <a className="block transition hover:text-white" href={telHref}>
                 {siteConfig.phone}
               </a>
               <a className="block transition hover:text-white" href={`mailto:${siteConfig.email}`}>
                 {siteConfig.email}
               </a>
-              <div className="text-white/75">
-                <p>{siteConfig.addressLine1}</p>
-                <p>{siteConfig.addressLine2}</p>
-              </div>
-            </div>
+              <p className="text-white/75">
+                {siteConfig.addressLine1}
+                <br />
+                {siteConfig.addressLine2}
+              </p>
+            </address>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <p>Built for responsive logistics operations and Vercel-ready deployment.</p>
+        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-white/50">
+            &copy; {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.
+          </p>
+          <p className="text-white/50">Photography on this site is illustrative and does not depict Dukeel equipment or staff.</p>
         </div>
       </Container>
     </footer>
